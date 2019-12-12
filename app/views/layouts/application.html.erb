@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
   <head>
-    <title>SimpleForm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>SimpleForm and Bootstrap in Rails</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+<!--  <body class="bg-light <%#= body_classes(params[:controller], params[:action]) %>">-->
+  <%#= content_tag :body, data: { action: action_name, controller: controller_name, path: request.path } do %>
+
+    <%= render "shared/header" %>
+    <%= render 'shared/flash_messages' %>
+    <%= render "shared/breadcrumb" %>
+
     <%= yield %>
+
+    <%= render "shared/footer" %>
+
+    <%= javascript_include_tag "application" %>
   </body>
+  <%# end %>
 </html>
