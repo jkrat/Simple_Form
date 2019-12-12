@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :examples, only: :index
+  namespace :examples do
+    get 'verticals/new'
+    get 'verticals/create'
+  end
+
+  root to: 'examples#index'
 end
