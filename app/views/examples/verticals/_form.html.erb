@@ -1,6 +1,25 @@
 <%= simple_form_for @user, url: examples_vertical_path do |f| %>
+  <%= f.error_notification %>
+
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :password %>
+  <%= f.input :avatar %>
+  <%= f.input :bio %>
+  <%= f.input :birthday %>
+  <%= f.input :color %>
+  <%= f.input :fruit %>
+  <%= f.input :music %>
+  <%= f.input :language %>
+  <%= f.input :pill %>
+  <%= f.input :choices %>
+  <%= f.input :friends %>
+  <%= f.input :mood %>
+  <%= f.input :awake %>
+  <%= f.input :first_kiss %>
+  <%= f.input :active %>
+  <%= f.input :terms %>
+
   <%= f.button :submit %>
+  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
 <% end %>

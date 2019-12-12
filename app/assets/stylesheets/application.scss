@@ -1,11 +1,15 @@
-
+$theme-colors: ( "simpleform": #114f7c, "bootstrap": #563d7c );
 @import "bootstrap";
+
+@import "application/header";
+@import 'application/footer';
+
+@import "components/alert";
 
 body {
   margin-top: 75px;
 }
 
-footer {
-  min-height: 100px;
-  background-color: lightgray;
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
