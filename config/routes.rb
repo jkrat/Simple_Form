@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   resources :examples, only: :index
-  namespace :examples do
-    get 'verticals/new'
-    get 'verticals/create'
+  namespace :examples, path_names: { new: ''} do
+    resource :vertical,   only: [:new, :create]
   end
 
   root to: 'examples#index'
