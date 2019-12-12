@@ -1,0 +1,2 @@
+module Examples::VerticalsHelper
+end
