@@ -28,7 +28,7 @@
 class User < ApplicationRecord
   serialize :fruit, JSON
   serialize :music, JSON
-  serialize :choises, JSON
+  serialize :choices, JSON
 
   AVATAR = Mime::LOOKUP.keys.keep_if { |v| v =~ /image/ }
   COLOR = %i[red pink violet indigo blue teal green yellow].freeze
@@ -41,9 +41,10 @@ class User < ApplicationRecord
   validates :name,        presence: true, length: { minimum: 3 }
   validates :email,       presence: true, format: { with: /.+@.+\.{1}.{2,}/ }
   validates :password,    length: { within: 8..40 }
-  validates :avatar,      presence: true
-  validates :bio,         length: { within: 100..900 }
-  validates :birthday,    presence: true
+  # validates :avatar,      presence: true
+  validates :bio,         length: { within: 10..900 }
+  validates :birthday,    presence: true, timeliness: { type: :date, after: -> { 1.day.ago },
+                                                        after_message: 'must be at least 1 day old' }
   validates :color,       presence: true
   validates :fruit,       presence: true
   validates :music,       presence: true
@@ -53,7 +54,7 @@ class User < ApplicationRecord
   validates :active,      presence: true, acceptance: true
   validates :friends,     numericality: { only_integer: true, greater_than: 1, less_than: 10_000 }
   validates :mood,        numericality: { only_integer: true, greater_than: 50, less_than_or_equal_to: 100 }
-  validates :awake,       presence: true
-  validates :first_kiss,  presence: true
+  validates :awake,       presence: true, timeliness: { type: :time, before: '12:00' }
+  validates :first_kiss,  presence: true, timeliness: { type: :datetime, after: '20:00' }
   validates :terms,       acceptance: true
 end

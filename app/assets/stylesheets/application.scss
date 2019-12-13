@@ -6,6 +6,8 @@ $theme-colors: ( "simpleform": #114f7c, "bootstrap": #563d7c );
 
 @import "components/alert";
 
+@import "simple_form-bootstrap/simple_form-bootstrap";
+
 body {
   margin-top: 56px;
 }

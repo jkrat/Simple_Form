@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'simple_form', '~> 5.0'
+gem 'validates_timeliness', '~> 4.1'

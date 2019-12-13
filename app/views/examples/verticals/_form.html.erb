@@ -1,11 +1,11 @@
 <%= simple_form_for @user, url: examples_vertical_path do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name %>
+  <%= f.input :name, placeholder: 'Your name' %>
 
   <%= f.input :email, input_html: { autocomplete: 'email' } %>
 
-  <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+  <%= f.input :password, hint: 'must be at least 8 characters', input_html: { autocomplete: 'current-password' } %>
 
   <%= f.input :avatar, as: :file, input_html: { accept: User::AVATAR } %>
 
