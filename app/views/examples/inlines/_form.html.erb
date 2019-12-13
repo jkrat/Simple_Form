@@ -5,8 +5,9 @@
                         boolean: :inline_boolean
                     } do |f| %>
 
+<!--  Need to test what happens without hiding unused fields in real create senario-->
   <%= render partial: "shared/form_unused_as_hidden", locals: {
-      f: f, fields: [:name, :avatar, :bio, :birthday, :color, :fruit, :music, :language, :pill, :choises, :active, :friends, :mood, :awake, :first_kiss]
+      f: f, fields: [:name, :avatar, :bio, :birthday, :color, :fruit, :music, :language, :pill, :choices, :active, :friends, :mood, :awake, :first_kiss]
   } %>
 
   <%= f.input :email, input_html: { class: "mb-2 mr-sm-2" } %>
@@ -15,5 +16,5 @@
 
   <%= f.input :terms %>
 
-  <%= f.button :submit, class: "btn-primary mb-2" %>
+  <%= f.button :submit, class: "btn-simpleform mb-2" %>
 <% end %>
