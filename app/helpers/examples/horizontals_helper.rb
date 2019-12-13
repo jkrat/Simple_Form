@@ -1,0 +1,2 @@
+module Examples::HorizontalsHelper
+end

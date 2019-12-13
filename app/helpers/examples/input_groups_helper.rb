@@ -1,0 +1,2 @@
+module Examples::InputGroupsHelper
+end
