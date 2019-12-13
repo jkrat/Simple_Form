@@ -1,24 +1,47 @@
-# README
+# Simple Form and Bootstrap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application showing example forms using Simple Form and Bootstrap.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+What things you need to install the software and how to install them
 
-* Database creation
+```
+Ruby v2.6.5
+Rails 6.0.1
+ 
+```
 
-* Database initialization
+### Installing
 
-* How to run the test suite
+A step by step series of examples that tell you how to get a development env running
 
-* Services (job queues, cache servers, search engines, etc.)
+Say what the step will be
 
-* Deployment instructions
+```
+Give the example
+```
 
-* ...
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+
+## Built With
+
+* [Rails](https://github.com/plataformatec/simple_form) - 
+* [Simple Form](https://github.com/plataformatec/simple_form) - 
+* [Bootstrap](https://getbootstrap.com/) - Dependency Management
+
+
+## Acknowledgments
+
+* based on example application linked from Simple Form docs.
