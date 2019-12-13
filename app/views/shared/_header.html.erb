@@ -14,7 +14,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Overview", examples_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Vertical Form", new_examples_vertical_path, class: "dropdown-item" %>
+            <% Examples::BaseController::TYPES.each do |type| %>
+              <%= link_to t("examples.index.#{type}.link"), [:new, :examples, type], class: "dropdown-item" %>
+            <% end %>
           </div>
         </li>
       </ul>

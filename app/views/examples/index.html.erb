@@ -6,15 +6,18 @@
 <div class="bg-light app-examples py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card box-shadow mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Vertical Form</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Reference Examples</h6>
-            <%= link_to "Vertical Form", [:new, :examples, :vertical], class: "btn btn-outline-primary mt-2"%>
+
+      <% Examples::BaseController::TYPES.each do |type| %>
+        <div class="col-md-4">
+          <div class="card box-shadow mb-4">
+            <div class="card-body">
+              <h5 class="card-title"><%= t(".#{type}.title") %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= t(".#{type}.subtitle") %></h6>
+              <%= link_to t(".#{type}.link"), [:new, :examples, type], class: "btn btn-outline-primary mt-2"%>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
