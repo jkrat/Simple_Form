@@ -46,11 +46,11 @@ class User < ApplicationRecord
   validates :birthday,    presence: true, timeliness: { type: :date, after: -> { 1.day.ago },
                                                         after_message: 'must be at least 1 day old' }
   validates :color,       presence: true
-  validates :fruit,       presence: true
-  validates :music,       presence: true
+  validates :fruit,       presence: true, exclusion_array: { deny_blank: true }
+  validates :music,       presence: true, exclusion_array: { in: User::MUSIC.first, presence: true, deny_blank: true }
   validates :language,    inclusion: { in: User::LANGUAGE.map(&:to_s) }
   validates :pill,        inclusion: { in: [User::PILL.first.to_s] }
-  validates :choices,     presence: true
+  validates :choices,     presence: true, exclusion_array: { in: User::CHOICES.first, presence: true, deny_blank: true }
   validates :active,      presence: true, acceptance: true
   validates :friends,     numericality: { only_integer: true, greater_than: 1, less_than: 10_000 }
   validates :mood,        numericality: { only_integer: true, greater_than: 50, less_than_or_equal_to: 100 }
