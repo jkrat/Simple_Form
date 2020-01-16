@@ -14,7 +14,7 @@
 #  music           :string
 #  language        :string
 #  pill            :string
-#  choises         :string
+#  choices         :string
 #  active          :boolean
 #  friends         :integer
 #  mood            :integer
